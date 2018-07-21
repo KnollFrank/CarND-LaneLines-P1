@@ -4,22 +4,11 @@
 
 **Finding Lane Lines on the Road**
 
-The goals / steps of this project are the following:
-* Make a pipeline that finds lane lines on the road
-* Reflect on your work in a written report
-
-
-[//]: # (Image References)
-
-[image1]: ./examples/grayscale.jpg "Grayscale"
-
----
+The goals of this project is to make a pipeline that finds lane lines on the road.
 
 ### Reflection
 
 ### Pipeline
-
-TODO: Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
 The pipeline performs the following steps:
 1. Given an image:<br> ![original](test_images_output_improved/solidYellowLeft_original.png)
@@ -28,19 +17,16 @@ The pipeline performs the following steps:
 4. Find edges in the image using the Canny algorithm:<br> ![canny](test_images_output_improved/solidYellowLeft_canny.png)
 5. Keep a polygonal region of the image probably containing lane lines:<br> ![region_of_interest](test_images_output_improved/solidYellowLeft_region_of_interest.png)
 6. Find lane lines in the image using the (probabilistic) Hough transform:
-   - original draw_lines():<br> ![hough_lines](test_images_output/solidYellowLeft_hough_lines.png)
-   - modified draw_lines():<br>
+   - using `draw_lines()`:<br> ![hough_lines](test_images_output/solidYellowLeft_hough_lines.png)
+   - using `draw_left_lane_and_right_lane()` (explained below):<br>
  ![hough_lines](test_images_output_improved/solidYellowLeft_hough_lines.png)
  7. Draw the lane lines found in the previous step onto the original image:
-    - original draw_lines():<br> ![weighted_img](test_images_output/solidYellowLeft_weighted_img.png)<br>
-    - modified draw_lines():<br> ![weighted_img](test_images_output_improved/solidYellowLeft_weighted_img.png)
+    - using `draw_lines()`:<br> ![weighted_img](test_images_output/solidYellowLeft_weighted_img.png)<br>
+    - using `draw_left_lane_and_right_lane()`:<br> ![weighted_img](test_images_output_improved/solidYellowLeft_weighted_img.png)
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
-
-If you'd like to include images to show how the pipeline works, here is how to include an image:
-
-![alt text][image1]
-
+In order to draw a single line on the left and right lanes, I created a modified version of the `draw_lines(image, lines, ...)` function named `draw_left_lane_and_right_lane(image, lines, ...)`:
+- It first partitions the `lines` into two subsets: one for left lines and another one for right lines. A left line is defined to go from bottom left to top right having a negative slope (or infinity) and a right line goes from bottom right to top left and has a positive slope.
+- Then for each of the subsets (left line subset and right line subset) I fitted a least squares linear regressor (`LinearRegression` from _sklearn_) to all the line endpoints of the subset, resulting in a line best approximating all the line endpoints of the subset. This best approximating line is defined to be the lane line which is then drawn onto the `image`.
 
 ### 2. Identify potential shortcomings with your current pipeline
 
