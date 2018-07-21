@@ -22,30 +22,19 @@ The goals / steps of this project are the following:
 TODO: Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
 My pipeline consisted of 5 steps.
-1. Given an image:<br/>
-![original](test_images_output_improved/solidYellowLeft_original.png)
-2. I converted the image to grayscale:<br/>
-![grayscale](test_images_output_improved/solidYellowLeft_grayscale.png)
-3. bla<br/>
-![gaussian_blur](test_images_output_improved/solidYellowLeft_gaussian_blur.png)
-4. blub<br/>
-![canny](test_images_output_improved/solidYellowLeft_canny.png)
-5. sdf<br/>
-![region_of_interest](test_images_output_improved/solidYellowLeft_region_of_interest.png)
-6.sdf<br/>
-![hough_lines](test_images_output_improved/solidYellowLeft_hough_lines.png) oder ![hough_lines](test_images_output/solidYellowLeft_hough_lines.png)
-7. sdf<br/>
-![weighted_img](test_images_output_improved/solidYellowLeft_weighted_img.png) oder ![weighted_img](test_images_output/solidYellowLeft_weighted_img.png)
 
-Description  | not improved  | pipeline  | improved
---|---|---|--
-Given an image:  |   | ![original](test_images_output_improved/solidYellowLeft_original.png)  |  
-I converted the image to grayscale:  |   | ![grayscale](test_images_output_improved/solidYellowLeft_grayscale.png)  |  
-gaussian_blur:  |   | ![gaussian_blur](test_images_output_improved/solidYellowLeft_gaussian_blur.png)  |  
-Canny  |   | ![canny](test_images_output_improved/solidYellowLeft_canny.png)  |  
-region of interest:  |   | ![region_of_interest](test_images_output_improved/solidYellowLeft_region_of_interest.png)  |  
-hough_lines:  | ![hough_lines](test_images_output/solidYellowLeft_hough_lines.png)  |   |  ![hough_lines](test_images_output_improved/solidYellowLeft_hough_lines.png)
-weighted_img:  | ![weighted_img](test_images_output/solidYellowLeft_weighted_img.png)  |   |  ![weighted_img](test_images_output_improved/solidYellowLeft_weighted_img.png)
+1. Given an image:<br> ![original](test_images_output_improved/solidYellowLeft_original.png)
+2. I converted the image to grayscale:<br> ![grayscale](test_images_output_improved/solidYellowLeft_grayscale.png)
+3. gaussian_blur:<br> ![gaussian_blur](test_images_output_improved/solidYellowLeft_gaussian_blur.png)
+4. Canny:<br> ![canny](test_images_output_improved/solidYellowLeft_canny.png)
+5. region of interest:<br> ![region_of_interest](test_images_output_improved/solidYellowLeft_region_of_interest.png)
+6. hough_lines:
+   - original draw_lines():<br> ![hough_lines](test_images_output/solidYellowLeft_hough_lines.png)
+   - improved draw_lines():<br>
+ ![hough_lines](test_images_output_improved/solidYellowLeft_hough_lines.png)
+ 7. weighted_img:
+    - original draw_lines():<br> ![weighted_img](test_images_output/solidYellowLeft_weighted_img.png)
+    - improved draw_lines():<br> ![weighted_img](test_images_output_improved/solidYellowLeft_weighted_img.png)
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
 
