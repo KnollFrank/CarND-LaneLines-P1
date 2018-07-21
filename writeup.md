@@ -30,11 +30,11 @@ In order to draw a single line on the left and right lanes, I created a modified
 
 ### 2. Identify potential shortcomings with your current pipeline
 
-
 One potential shortcoming would be what would happen when ...
 
 Another shortcoming could be ...
 
+- **imprecise**: lane lines are not precisely recognized, which can be seen in the image below where the right red line is not drawn over the white lane line near the bottom of the image: ![](test_images_output_improved/solidYellowCurve.png)
 
 ### 3. Suggest possible improvements to your pipeline
 
