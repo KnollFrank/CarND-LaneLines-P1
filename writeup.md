@@ -21,20 +21,19 @@ The goals / steps of this project are the following:
 
 TODO: Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
-My pipeline consisted of 5 steps.
-
+The pipeline performs the following steps:
 1. Given an image:<br> ![original](test_images_output_improved/solidYellowLeft_original.png)
-2. I converted the image to grayscale:<br> ![grayscale](test_images_output_improved/solidYellowLeft_grayscale.png)
-3. gaussian_blur:<br> ![gaussian_blur](test_images_output_improved/solidYellowLeft_gaussian_blur.png)
-4. Canny:<br> ![canny](test_images_output_improved/solidYellowLeft_canny.png)
-5. region of interest:<br> ![region_of_interest](test_images_output_improved/solidYellowLeft_region_of_interest.png)
-6. hough_lines:
+2. Convert the image to grayscale:<br> ![grayscale](test_images_output_improved/solidYellowLeft_grayscale.png)
+3. Blur the image using a Gaussian filter:<br> ![gaussian_blur](test_images_output_improved/solidYellowLeft_gaussian_blur.png)
+4. Find edges in the image using the Canny algorithm:<br> ![canny](test_images_output_improved/solidYellowLeft_canny.png)
+5. Keep a polygonal region of the image probably containing lane lines:<br> ![region_of_interest](test_images_output_improved/solidYellowLeft_region_of_interest.png)
+6. Find lane lines in the image using the (probabilistic) Hough transform:
    - original draw_lines():<br> ![hough_lines](test_images_output/solidYellowLeft_hough_lines.png)
-   - improved draw_lines():<br>
+   - modified draw_lines():<br>
  ![hough_lines](test_images_output_improved/solidYellowLeft_hough_lines.png)
- 7. weighted_img:
-    - original draw_lines():<br> ![weighted_img](test_images_output/solidYellowLeft_weighted_img.png)
-    - improved draw_lines():<br> ![weighted_img](test_images_output_improved/solidYellowLeft_weighted_img.png)
+ 7. Draw the lane lines found in the previous step onto the original image:
+    - original draw_lines():<br> ![weighted_img](test_images_output/solidYellowLeft_weighted_img.png)<br>
+    - modified draw_lines():<br> ![weighted_img](test_images_output_improved/solidYellowLeft_weighted_img.png)
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
 
