@@ -37,6 +37,16 @@ My pipeline consisted of 5 steps.
 7. sdf<br/>
 ![weighted_img](test_images_output_improved/solidYellowLeft_weighted_img.png) oder ![weighted_img](test_images_output/solidYellowLeft_weighted_img.png)
 
+Description  | not improved  | pipeline  | improved
+--|---|---|--
+Given an image:  |   | ![original](test_images_output_improved/solidYellowLeft_original.png)  |  
+I converted the image to grayscale:  |   | ![grayscale](test_images_output_improved/solidYellowLeft_grayscale.png)  |  
+gaussian_blur:  |   | ![gaussian_blur](test_images_output_improved/solidYellowLeft_gaussian_blur.png)  |  
+Canny  |   | ![canny](test_images_output_improved/solidYellowLeft_canny.png)  |  
+region of interest:  |   | ![region_of_interest](test_images_output_improved/solidYellowLeft_region_of_interest.png)  |  
+hough_lines:  | ![hough_lines](test_images_output/solidYellowLeft_hough_lines.png)  |   |  ![hough_lines](test_images_output_improved/solidYellowLeft_hough_lines.png)
+weighted_img:  | ![weighted_img](test_images_output/solidYellowLeft_weighted_img.png)  |   |  ![weighted_img](test_images_output_improved/solidYellowLeft_weighted_img.png)
+
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
 
 If you'd like to include images to show how the pipeline works, here is how to include an image:
